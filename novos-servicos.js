@@ -23,4 +23,11 @@
   if (faq && !document.querySelector('#terceirizacao')) faq.insertAdjacentHTML('beforebegin', terceirizacao);
   const nav = document.querySelector('header nav');
   if (nav && !nav.querySelector('[href="#terceirizacao"]')) nav.insertAdjacentHTML('beforeend', '<a href="#terceirizacao">TERCEIRIZAÇÃO</a>');
+  const footer = document.querySelector('footer .footer');
+  if (footer && !footer.querySelector('.footer-contacts')) footer.insertAdjacentHTML('beforeend', `
+    <div class="footer-contacts" aria-label="Contatos da COMUNICAR">
+      <a href="https://wa.me/557588028694" target="_blank" rel="noreferrer"><span aria-hidden="true">◉</span><span>+55 75 8802-8694</span></a>
+      <a href="mailto:atendimento@comunicarfsa.com.br"><span aria-hidden="true">✉</span><span>atendimento@comunicarfsa.com.br</span></a>
+      <a href="https://instagram.com/comunicarfsa" target="_blank" rel="noreferrer"><span aria-hidden="true">◎</span><span>@comunicarfsa</span></a>
+    </div>`);
 })();
