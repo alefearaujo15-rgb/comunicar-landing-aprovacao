@@ -525,3 +525,22 @@ footer>.footer{width:100vw!important;max-width:none!important;margin-left:calc(5
 @media(max-width:800px){
   footer>.footer{width:100vw!important;margin-left:calc(50% - 50vw)!important;padding-left:18px!important;padding-right:18px!important}
 }
+
+/* Novos serviços adicionados sem alterar as seções existentes */
+.new-service-section{position:relative;overflow:hidden;padding:clamp(86px,10vw,150px) 0;background:#07101f;color:#f4f7ff;border-top:1px solid #67d2ed18}
+.new-service-section:nth-of-type(even){background:#05070d}
+.new-service-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(42px,8vw,120px);align-items:center}
+.new-service-copy h2{max-width:650px;font-size:clamp(38px,5vw,72px);line-height:.98;margin:16px 0 24px}
+.new-service-lead,.new-service-copy>p:not(.eyebrow){max-width:560px;color:#b7c5d8;font-size:18px;line-height:1.65}
+.new-service-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px;margin:28px 0 34px;padding:0;list-style:none;color:#e9f5ff}
+.new-service-list li:before{content:'✓';color:#f3b52a;margin-right:10px}
+.new-service-visual{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;align-items:end}
+.new-service-visual>img,.new-service-mini img{width:100%;height:360px;object-fit:cover;border-radius:18px;border:1px solid #67d2ed44;box-shadow:0 25px 70px #0008}
+.new-service-mini{display:block}.new-service-mini img{height:220px}
+.new-service-partner{background:radial-gradient(circle at 75% 15%,#67d2ed22,transparent 30%),#08152b}
+.new-service-partner .new-service-grid{grid-template-columns:1.15fr .85fr}
+.new-service-partner .new-service-visual{display:flex;flex-direction:column;gap:24px}
+.new-service-partner .new-service-visual>img{height:300px}
+.partner-flow{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:28px 0;color:#dff7ff;font-weight:700}
+.partner-flow span{padding:13px 16px;border:1px solid #67d2ed55;border-radius:999px;background:#67d2ed0c}.partner-flow b{color:#f3b52a}
+@media(max-width:760px){.new-service-grid,.new-service-partner .new-service-grid{grid-template-columns:1fr}.new-service-list{grid-template-columns:1fr}.new-service-visual{grid-template-columns:1fr}.new-service-visual>img,.new-service-mini img{height:260px}.partner-flow{align-items:flex-start;flex-direction:column}.partner-flow b{transform:rotate(90deg);margin-left:24px}}
