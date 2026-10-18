@@ -9,6 +9,29 @@
       return;
     }
 
+    var gallery = document.querySelector('#portfolio .gallery');
+    if (gallery && !gallery.dataset.curated) {
+      gallery.dataset.curated = 'true';
+      var projects = [
+        ['/comunicar-espaco-baby-4k.png', 'FACHADA COMERCIAL EM ACM', 'Aplicação de comunicação visual para negócio local.'],
+        ['/comunicar-otica-toldos-4k.png', 'TOLDOS E PROTEÇÃO DE FACHADA', 'Soluções de cobertura e acabamento para entradas comerciais.'],
+        ['/comunicar-projeto-3d-4k.png', 'PROJETO 3D DE FACHADA', 'Pré-visualização da fachada antes da produção e instalação.'],
+        ['/comunicar-embalagens.png', 'PROJETOS DE GRANDE PORTE', 'Produção e instalação com estrutura completa.'],
+        ['/comunicar-totem.png', 'TOTENS E ELEMENTOS 3D', 'Elementos de destaque para reforçar a marca.'],
+        ['/comunicar-boutique.png', 'FACHADAS COMERCIAIS', 'Composição visual alinhada ao posicionamento do negócio.']
+      ];
+      gallery.innerHTML = projects.map(function (project, index) {
+        return '<figure class="reveal ' + (index === 0 ? 'big' : '') + '"><img src="' + project[0] + '" alt="' + project[1] + '" loading="lazy"><figcaption><strong>' + project[1] + '</strong><small>' + project[2] + '</small></figcaption></figure>';
+      }).join('');
+    }
+
+    var serviceImage = document.querySelector('.service .cols > div:first-child img');
+    if (serviceImage && !serviceImage.dataset.curated) {
+      serviceImage.dataset.curated = 'true';
+      serviceImage.src = '/comunicar-espaco-baby-4k.png';
+      serviceImage.alt = 'Fachada comercial em ACM realizada pela COMUNICAR';
+    }
+
   function countTo(el) {
     if (el.dataset.counted) return;
     el.dataset.counted = 'true';
