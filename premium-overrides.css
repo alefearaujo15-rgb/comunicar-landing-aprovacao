@@ -456,6 +456,10 @@ header{background:linear-gradient(180deg,#020812f2,#020812cc)!important;border-b
 
 @media(prefers-reduced-motion:reduce){.hero>img,#portfolio .gallery figure img,.doors img{transition:none!important}.btn:hover,#portfolio .gallery figure:hover{transform:none!important}}
 
+.service-extra-projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+.service-extra-projects img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid #67d2ed44}
+@media(max-width:800px){.service-extra-projects{grid-template-columns:1fr}.service-extra-projects img{height:220px}}
+
 /* Portfolio correction: controlled editorial grid with no orphaned cards or empty masonry gaps. */
 #portfolio.portfolio{padding-top:56px!important;padding-bottom:56px!important;min-height:0!important;height:auto!important}
 #portfolio .portfolio-head{padding-top:0!important;margin-top:0!important;margin-bottom:28px!important}

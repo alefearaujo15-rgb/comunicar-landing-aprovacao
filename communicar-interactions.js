@@ -14,7 +14,7 @@
       gallery.dataset.curated = 'true';
       var projects = [
         ['/comunicar-espaco-baby-4k.png', 'FACHADA COMERCIAL EM ACM', 'Aplicação de comunicação visual para negócio local.'],
-        ['/comunicar-otica-toldos-4k.png', 'TOLDOS E PROTEÇÃO DE FACHADA', 'Soluções de cobertura e acabamento para entradas comerciais.'],
+        ['/toldo-comercial.jpeg', 'TOLDOS E PROTEÇÃO DE FACHADA', 'Soluções de cobertura e acabamento para entradas comerciais.'],
         ['/comunicar-projeto-3d-4k.png', 'PROJETO 3D DE FACHADA', 'Pré-visualização da fachada antes da produção e instalação.'],
         ['/comunicar-embalagens.png', 'PROJETOS DE GRANDE PORTE', 'Produção e instalação com estrutura completa.'],
         ['/comunicar-totem.png', 'TOTENS E ELEMENTOS 3D', 'Elementos de destaque para reforçar a marca.'],
@@ -34,8 +34,14 @@
     }
     if (serviceImage && !serviceImage.dataset.curated) {
       serviceImage.dataset.curated = 'true';
-      serviceImage.src = '/comunicar-espaco-baby-4k.png';
       serviceImage.alt = 'Fachada comercial em ACM realizada pela COMUNICAR';
+      var visual = serviceImage.parentElement;
+      if (visual && !visual.querySelector('.service-extra-projects')) {
+        var extras = document.createElement('div');
+        extras.className = 'service-extra-projects';
+        extras.innerHTML = '<img src="/comunicar-espaco-baby-4k.png" alt="Fachada do Espaço Baby em ACM" loading="lazy"><img src="/comunicar-otica-toldos-4k.png" alt="Fachada da Ótica Nova Visão com toldos" loading="lazy">';
+        visual.appendChild(extras);
+      }
     }
 
   function countTo(el) {
