@@ -1,4 +1,5 @@
 (() => {
+  function init() {
   const img = (src, alt) => `<img src="/${src}" alt="${alt}" loading="lazy">`;
   const section = (id, eyebrow, title, copy, body, visual) => `
     <section id="${id}" class="new-service-section ${id === 'terceirizacao' ? 'new-service-partner' : ''}">
@@ -19,6 +20,10 @@
   const terceirizacao = section('terceirizacao', 'PARA AGÊNCIAS E EMPRESAS', 'Você cuida do cliente. A COMUNICAR cuida da produção.', 'Sua empresa não precisa ter máquinas, equipe ou estrutura própria para entregar projetos de comunicação visual.', `<p>Atuamos como parceira de produção para agências, designers, empresas e profissionais que precisam terceirizar serviços com qualidade, segurança e prazo.</p>${list(['Fachadas, toldos e coberturas', 'Letras caixa, totens e comunicação visual', 'Produção, acabamento e instalação'])}`, `<div class="partner-flow"><span>Você apresenta</span><b>→</b><span>A COMUNICAR produz</span><b>→</b><span>Seu cliente recebe</span></div>${img('cobertura-galpao.jpeg', 'Estrutura de produção em grande escala')}`);
   const process = document.querySelector('#processo');
   const faq = document.querySelector('.faq');
+  if (!process || !faq) {
+    window.setTimeout(init, 150);
+    return;
+  }
   if (process && !document.querySelector('#coberturas')) process.insertAdjacentHTML('beforebegin', cobertura + toldos);
   if (faq && !document.querySelector('#terceirizacao')) faq.insertAdjacentHTML('beforebegin', terceirizacao);
   const nav = document.querySelector('header nav');
@@ -30,4 +35,6 @@
       <a href="mailto:atendimento@comunicarfsa.com.br"><span aria-hidden="true">✉</span><span>atendimento@comunicarfsa.com.br</span></a>
       <a href="https://instagram.com/comunicarfsa" target="_blank" rel="noreferrer"><span aria-hidden="true">◎</span><span>@comunicarfsa</span></a>
     </div>`);
+  }
+  init();
 })();

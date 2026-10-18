@@ -21,7 +21,7 @@
         ['/comunicar-boutique.png', 'FACHADAS COMERCIAIS', 'Composição visual alinhada ao posicionamento do negócio.']
       ];
       gallery.innerHTML = projects.map(function (project, index) {
-        return '<figure class="reveal ' + (index === 0 ? 'big' : '') + '"><img src="' + project[0] + '" alt="' + project[1] + '" loading="lazy"><figcaption><strong>' + project[1] + '</strong><small>' + project[2] + '</small></figcaption></figure>';
+        return '<figure class="' + (index === 0 ? 'big' : '') + '"><img src="' + project[0] + '" alt="' + project[1] + '" loading="lazy"><figcaption><strong>' + project[1] + '</strong><small>' + project[2] + '</small></figcaption></figure>';
       }).join('');
     }
 
