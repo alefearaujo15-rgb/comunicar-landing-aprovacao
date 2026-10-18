@@ -26,6 +26,12 @@
     }
 
     var serviceImage = document.querySelector('.service .cols > div:first-child img');
+    if (!serviceImage) {
+      var serviceHeading = Array.prototype.slice.call(document.querySelectorAll('h2')).find(function (heading) {
+        return (heading.textContent || '').indexOf('Fachadas completas') !== -1;
+      });
+      serviceImage = serviceHeading && serviceHeading.closest('section, .blue, .new-service-section') && serviceHeading.closest('section, .blue, .new-service-section').querySelector('img');
+    }
     if (serviceImage && !serviceImage.dataset.curated) {
       serviceImage.dataset.curated = 'true';
       serviceImage.src = '/comunicar-espaco-baby-4k.png';
